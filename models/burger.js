@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
 	}, {});
 
 	Burger.associate = function(models) {
-		// associations can be defined here
+		models.Burger.hasMany(models.Rating);
 	};
 
 	return Burger;
