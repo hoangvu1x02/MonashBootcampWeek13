@@ -9,21 +9,19 @@
 		{{!-- This is not devoured --}}
 		<div>
 			{{#each burgers}}
-				{{#with dataValues}}
-					{{#unless isDevoured }}
-						<div>
-							{{ name }} <button class="devour" data-id="{{ id }}">Devour it</button>
-						</div>
-					{{/unless}}
-				{{/with}}
+				{{#unless isDevoured }}
+					<div>
+						{{ name }} <button class="devour" data-id="{{ id }}">Devour it</button>
+					</div>
+				{{/unless}}
 			{{/each}}
 		</div>
 		{{!-- This is devoured --}}
 		<div>
 			{{#each burgers}}
-				{{#if dataValues.isDevoured }}
+				{{#if isDevoured }}
 					<div>
-						{{ dataValues.name }}
+						{{ name }}
 					</div>
 				{{/if}}
 			{{/each}}
